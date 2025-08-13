@@ -1,0 +1,20 @@
+setMethod() documentation: https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/setData
+difference between evt.target and evt.currentTarget: https://medium.com/@bloodturtle/difference-between-event-target-and-event-currenttarget-0d229cc7f9eb
+
+In the process of dragging, we have a 'drag-data'.
+The setData() method of the drap and drop html api sets the 'drag-data' to the specific data and type of the drag operation.
+
+some examples of data-types are: text/plain, text/uri-list.
+
+Syntax:
+  `setData(format, data)`
+  - format: the format of the drag data(its type) to add to the DataTransfer object.
+  - data: the actual data to add to the DataTransfer.
+Return value:
+  None(underfined).
+
+
+      Example: 
+in this example wa can drag a <p> element into a <div> element.
+In the dragstart handler, we use setData() to add the id of the <p> element to the DataTransfer object.
+In the drop handler we retrieve the id and use it to move the <p> element into the target.
