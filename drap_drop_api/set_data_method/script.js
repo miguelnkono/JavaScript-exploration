@@ -14,8 +14,9 @@ source.addEventListener("dragstart", (event) => {
   event.dataTransfer.clearData();
 
   // set the drag format and data.
-  // use the event target's is as the data.
+  // use the event target's id as the data.
   event.dataTransfer.setData("text/plain", event.target.id);
+  event.dataTransfer.effectAllowed = "move";
 });
 
 // we listen for the dragend event on the source element.
